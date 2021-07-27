@@ -1,0 +1,9 @@
+env: "development"
+database:
+    addr: "localhost:5432"
+    user: "postgres"
+    pass: "postgres"
+    database: "db_test"
+tmdb:
+    apiKey: "f149d1f73f6ac2b298e0ee6f34c25091"
+    endPoint: "https://api.themoviedb.org/3/"
