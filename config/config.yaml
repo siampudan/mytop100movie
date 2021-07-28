@@ -7,3 +7,5 @@ database:
 tmdb:
     apiKey: "f149d1f73f6ac2b298e0ee6f34c25091"
     endPoint: "https://api.themoviedb.org/3/"
+app:
+    port: ":8080"
