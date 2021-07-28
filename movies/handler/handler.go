@@ -30,3 +30,9 @@ func (h *Handler) GetMovieDetail(c *gin.Context) {
 		"data": result,
 	})
 }
+
+func (h *Handler) Hello(c *gin.Context) {
+	c.JSON(http.StatusOK, map[string]interface{}{
+		"data": "Hello World",
+	})
+}
