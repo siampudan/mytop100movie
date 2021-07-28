@@ -9,6 +9,7 @@ import (
 	moviesHandler "github.com/siampudan/mytop100movie/movies/handler"
 	moviesRepo "github.com/siampudan/mytop100movie/movies/repo"
 	moviesUsecase "github.com/siampudan/mytop100movie/movies/usecase"
+	"github.com/spf13/viper"
 	"go.uber.org/zap"
 )
 
@@ -29,6 +30,6 @@ func main() {
 	moviesUsecase := moviesUsecase.NewMoviesUseCaSe(moviesRepo)
 
 	moviesHandler.MoviesRoute(moviesUsecase, v1)
-	r.Run("localhost:8080")
+	r.Run(viper.GetString("app.port"))
 
 }
