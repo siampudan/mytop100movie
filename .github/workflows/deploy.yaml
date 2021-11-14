@@ -22,4 +22,4 @@ jobs:
             host: ${{ secrets.HOST }}
             user: ubuntu
             pass: ${{ secrets.PASSWORD }}
-            args: "-tt"
+            args: "-tt -vvv"
