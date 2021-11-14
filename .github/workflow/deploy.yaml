@@ -1,0 +1,24 @@
+name: deploy
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    name: Build and Run
+    runs-on: ubuntu-latest
+    steps:
+        - name: ls -a via ssh
+          uses: fifsky/ssh-action@master
+          with:
+            command: |
+                cd go/src/mytop100movie
+                ls -a
+                git pull origin master
+                go build cmd/api/main.go
+                service supervisor restart
+            host: ${{ secrets.HOST }}
+            user: ubuntu
+            pass: ${{ secrets.PASSWORD }}
+            args: "-tt"
